@@ -19,7 +19,7 @@ export default function ExpenseForm(props) {
     event.preventDefault();
     const expenseData = {
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: +enteredAmount,
       date: new Date(enteredDate),
     };
     props.onSaveExpenseData(expenseData);
@@ -43,7 +43,7 @@ export default function ExpenseForm(props) {
           <input
             type="number"
             min="0.01"
-            steps="0.01"
+            step="0.01"
             value={enteredAmount}
             onChange={amountChangeHandler}
           />
